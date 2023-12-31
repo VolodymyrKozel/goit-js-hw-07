@@ -14,11 +14,24 @@ h5,
 h6 {
   margin: 0;
 }
+img {
+  max-width: 100%;
+  /*  height: auto; */
+  display: block;
+  /* object-fit: cover; */
+}
+a {
+  text-decoration: none;
+  color: currentColor;
+}
+a:is(:hover, :focus) {
+  text-decoration: underline;
+}
 
 body {
   margin: 16px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #fafafa;
@@ -26,7 +39,22 @@ body {
   line-height: 1.5;
   font-weight: 400;
 }
-
+body ul {
+  display: flex;
+  gap: 16px;
+}
+ul li a {
+  padding: 8px 16px;
+  display: block;
+  font-family: Montserrat;
+  color: #fff;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  border-radius: 8px;
+  background-color: #4e75ff;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
 /* Task 1 style */
 #categories {
   width: 440px;
@@ -71,4 +99,160 @@ body {
   letter-spacing: 0.04em;
   border-radius: 4px;
   border: 1px solid #808080;
+}
+
+.gallery {
+  margin: 0 auto;
+  padding: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.gallery li {
+  flex-shrink: 0;
+  margin: 0 auto;
+  padding: 12px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  border-radius: 5px;
+  background-color: #fafafa;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.gallery li:is(:hover, :focus) {
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+.gallery li:active {
+  width: 90%;
+}
+.gallery li:active img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 70%;
+  height: auto;
+  transform: translate(-50%, -50%);
+  padding: 12px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  border-radius: 5px;
+}
+#name-input,
+.login-form input {
+  margin-bottom: 16px;
+  width: 360px;
+}
+
+#name-input,
+.login-form input,
+#controls input {
+  display: block;
+  padding: 8px 16px;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+  outline: transparent;
+  background-color: transparent;
+  border-radius: 4px;
+  border: 1px solid #808080;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+h1 {
+  color: #2e2f42;
+  font-family: Montserrat;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.33;
+  letter-spacing: 0.96px;
+}
+
+#name-input:is(:hover, :focus),
+.login-form input:is(:hover, :focus) {
+  border-color: #000;
+}
+
+.login-form {
+  margin: 0 auto;
+  width: 408px;
+  padding: 24px;
+  border-radius: 8px;
+  background-color: #fff;
+}
+.login-form label {
+  display: block;
+  color: #2e2f42;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+}
+.login-form input:not(last-child) {
+  margin-bottom: 8px;
+}
+.login-form input {
+  margin-top: 8px;
+}
+.login-form button {
+  margin-top: 16px;
+}
+.login-form button,
+.widget button,
+#controls button {
+  min-width: 86px;
+  padding: 8px 16px;
+  display: block;
+  color: #fff;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  border-radius: 8px;
+  background-color: #4e75ff;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  border: none;
+}
+.login-form button:is(:hover, :focus),
+.widget button:is(:hover, :focus),
+ul li a:is(:hover, :focus),
+#controls button:is(:hover, :focus) {
+  background-color: #6c8cff;
+}
+.widget {
+  margin: 0 auto;
+  padding: 100px 88px;
+  width: 345px;
+  background-color: #fff;
+  border-radius: 8px;
+}
+.widget p {
+  width: 150px;
+  text-align: center;
+  color: #2e2f42;
+  font-family: Montserrat;
+  letter-spacing: 0.04em;
+}
+.widget button {
+  margin: 0 auto;
+}
+#boxes,
+#controls {
+  padding: 32px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background-color: #f6f6fe;
+}
+#controls {
+  margin-bottom: 16px;
+}
+#boxes {
+  align-items: start;
+}
+
+#controls input {
+  width: 150px;
 }
