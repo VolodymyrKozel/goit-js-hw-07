@@ -13,11 +13,12 @@
     <form class="login-form">
       <label>
         Email
-        <input type="email" name="email" />
+        <input 
+        type="email" name="email" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" />
       </label>
       <label>
         Password
-        <input type="password" name="password" />
+        <input type="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" />
       </label>
       <button type="submit">Login</button>
     </form>
